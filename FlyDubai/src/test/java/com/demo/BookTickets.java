@@ -54,7 +54,7 @@ public class BookTickets {
 		String passangeFirstName = "//input[@id='First_Name']";
 		String passangeLastName = "//input[@id='Last_Name']";
 		String passangeEmail = "//input[@id='Email_Address']";
-		String passangeGender = "//label[@for='Male.Text-input']//div[@class='mat-radio-outer-circle']";
+		String passangeGender = "//*[contains(@id,'Male')]";
 		String passangeMobile = "//input[@id='Mobile_Number']";
 		String code = "//div[@class='mat-form-field-flex ng-tns-c24-67']";
 		String countryCode = "//span[contains(text(),'+91')]";
@@ -218,7 +218,7 @@ public class BookTickets {
 		String totalPrice = driver.findElement(By.xpath(totalPrice_xpath)).getText();
 
 		System.out.println(
-				"Step 10: Click on ‘Continue to passenger details’ hyperlink will redirect to Passenger details page");
+				"Step 10: Click on ï¿½Continue to passenger detailsï¿½ hyperlink will redirect to Passenger details page");
 
 		try {
 			WebElement continue_xpath_1 = wait
@@ -246,7 +246,7 @@ public class BookTickets {
 			Assert.fail("Failed to Element for Continue to passenger details");
 		}
 
-		System.out.println("Step 11: Enter passenger information and click on ‘Review Booking’ button");
+		System.out.println("Step 11: Enter passenger information and click on ï¿½Review Bookingï¿½ button");
 		try {
 			WebElement passangeDetails = wait
 					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(passangeFirstName)));
@@ -276,7 +276,7 @@ public class BookTickets {
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reviewBookingButton)));
 		reviewBookingBtn.click();
 
-		System.out.println("Step 12: System navigates to ‘Review your booking details’ page");
+		System.out.println("Step 12: System navigates to ï¿½Review your booking detailsï¿½ page");
 		String actualPageReview = null;
 		try {
 			WebElement actualPageRevi = wait
