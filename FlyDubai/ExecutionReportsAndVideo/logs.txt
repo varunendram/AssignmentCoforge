@@ -1,0 +1,741 @@
+Step 1: Click on URL will open the home page
+Expected text on Home scren: Book a flight
+Actual text on Home scren: Book a flight
+Step 2: Enter the route, date and no of passengers
+Step 3: Click on Search button
+Step 4: System redirects to flight results page
+Expected text on flight results page:  SELECT DEPARTING FLIGHT
+Actual text on flight results page: SELECT DEPARTING FLIGHT
+Step 5: Click on one of the flight tab which expands the fare brand display
+API Response Status: 200 
+URL: https://qa1-flights2.np.flydubai.com/api/flights/7
+API Response: 
+{
+  "serverDateTimeUTC ": "2024-03-06T11:38:56",
+  "combinabilityStrictMode": true,
+  "sessionDuration": "60",
+  "popupTimeout": "10",
+  "channel": null,
+  "serverTimeGMT": null,
+  "segments": [
+    {
+      "route": "DXB_MCT",
+      "origin": "DXB",
+      "dest": "MCT",
+      "operatingCarrier": null,
+      "direction": "outBound",
+      "lowestAdultFarePerPax": "595.00",
+      "lowestAdultFareTaxSumPerPax": "205.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-04-07T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "14320894",
+          "departureDate": "2024-04-07T00:00:00",
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "1",
+          "combinables": [
+            "2"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "DXB_MCT",
+      "origin": "DXB",
+      "dest": "MCT",
+      "operatingCarrier": null,
+      "direction": "outBound",
+      "lowestAdultFarePerPax": "595.00",
+      "lowestAdultFareTaxSumPerPax": "205.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-04-08T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "14320815",
+          "departureDate": "2024-04-08T00:00:00",
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "5",
+          "combinables": [
+            "6"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "DXB_MCT",
+      "origin": "DXB",
+      "dest": "MCT",
+      "operatingCarrier": null,
+      "direction": "outBound",
+      "lowestAdultFarePerPax": "595.00",
+      "lowestAdultFareTaxSumPerPax": "205.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-04-09T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "14320815",
+          "departureDate": "2024-04-09T00:00:00",
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "29",
+          "combinables": [
+            "30"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "DXB_MCT",
+      "origin": "DXB",
+      "dest": "MCT",
+      "operatingCarrier": null,
+      "direction": "outBound",
+      "lowestAdultFarePerPax": "595.00",
+      "lowestAdultFareTaxSumPerPax": "205.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-04-10T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "14320815",
+          "departureDate": "2024-04-10T00:00:00",
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "33",
+          "combinables": [
+            "34"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "DXB_MCT",
+      "origin": "DXB",
+      "dest": "MCT",
+      "operatingCarrier": null,
+      "direction": "outBound",
+      "lowestAdultFarePerPax": "595.00",
+      "lowestAdultFareTaxSumPerPax": "205.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-04-11T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "14320815",
+          "departureDate": "2024-04-11T00:00:00",
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "57",
+          "combinables": [
+            "58"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "DXB_MCT",
+      "origin": "DXB",
+      "dest": "MCT",
+      "operatingCarrier": null,
+      "direction": "outBound",
+      "lowestAdultFarePerPax": "595.00",
+      "lowestAdultFareTaxSumPerPax": "205.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-04-12T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "14320815",
+          "departureDate": "2024-04-12T00:00:00",
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "61",
+          "combinables": [
+            "62"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "DXB_MCT",
+      "origin": "DXB",
+      "dest": "MCT",
+      "operatingCarrier": null,
+      "direction": "outBound",
+      "lowestAdultFarePerPax": "595.00",
+      "lowestAdultFareTaxSumPerPax": "205.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-04-13T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "14320894",
+          "departureDate": "2024-04-13T00:00:00",
+          "lowestAdultFarePerPax": "595.00",
+          "lowestAdultFareTaxSumPerPax": "205.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "85",
+          "combinables": [
+            "86"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "MCT_DXB",
+      "origin": "MCT",
+      "dest": "DXB",
+      "operatingCarrier": null,
+      "direction": "inBound",
+      "lowestAdultFarePerPax": "615.00",
+      "lowestAdultFareTaxSumPerPax": "225.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-05-10T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "13906814",
+          "departureDate": "2024-05-10T00:00:00",
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "2",
+          "combinables": [
+            "1"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "MCT_DXB",
+      "origin": "MCT",
+      "dest": "DXB",
+      "operatingCarrier": null,
+      "direction": "inBound",
+      "lowestAdultFarePerPax": "615.00",
+      "lowestAdultFareTaxSumPerPax": "225.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-05-11T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "13906745",
+          "departureDate": "2024-05-11T00:00:00",
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "4",
+          "combinables": [
+            "3"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "MCT_DXB",
+      "origin": "MCT",
+      "dest": "DXB",
+      "operatingCarrier": null,
+      "direction": "inBound",
+      "lowestAdultFarePerPax": "615.00",
+      "lowestAdultFareTaxSumPerPax": "225.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-05-12T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "13906814",
+          "departureDate": "2024-05-12T00:00:00",
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "10",
+          "combinables": [
+            "9"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "MCT_DXB",
+      "origin": "MCT",
+      "dest": "DXB",
+      "operatingCarrier": null,
+      "direction": "inBound",
+      "lowestAdultFarePerPax": "615.00",
+      "lowestAdultFareTaxSumPerPax": "225.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-05-13T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "13906745",
+          "departureDate": "2024-05-13T00:00:00",
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "12",
+          "combinables": [
+            "11"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "MCT_DXB",
+      "origin": "MCT",
+      "dest": "DXB",
+      "operatingCarrier": null,
+      "direction": "inBound",
+      "lowestAdultFarePerPax": "615.00",
+      "lowestAdultFareTaxSumPerPax": "225.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-05-14T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "13906814",
+          "departureDate": "2024-05-14T00:00:00",
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "18",
+          "combinables": [
+            "17"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "MCT_DXB",
+      "origin": "MCT",
+      "dest": "DXB",
+      "operatingCarrier": null,
+      "direction": "inBound",
+      "lowestAdultFarePerPax": "615.00",
+      "lowestAdultFareTaxSumPerPax": "225.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-05-15T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "13906814",
+          "departureDate": "2024-05-15T00:00:00",
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "20",
+          "combinables": [
+            "19"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    },
+    {
+      "route": "MCT_DXB",
+      "origin": "MCT",
+      "dest": "DXB",
+      "operatingCarrier": null,
+      "direction": "inBound",
+      "lowestAdultFarePerPax": "615.00",
+      "lowestAdultFareTaxSumPerPax": "225.00",
+      "lowestAdultFareNoTaxUnformatted": "390.00",
+      "lowestAdultFareCabin": null,
+      "lowestFareByCabin": [
+        {
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "lowestAdultFareCabin": "ECONOMY",
+          "lowestAdultRedeemMiles": null,
+          "currencyCode": "AED"
+        }
+      ],
+      "currencyCode": "AED",
+      "departureDate": "2024-05-16T00:00:00",
+      "isPromoFare": false,
+      "isSoldOut": false,
+      "flights": null,
+      "brands": null,
+      "notifications": null,
+      "isInterline": false,
+      "isCodeShare": false,
+      "multiDayLowestFareflights": [
+        {
+          "lfId": "13906745",
+          "departureDate": "2024-05-16T00:00:00",
+          "lowestAdultFarePerPax": "615.00",
+          "lowestAdultFareTaxSumPerPax": "225.00",
+          "lowestAdultFareNoTaxUnformatted": "390.00",
+          "isInterline": false,
+          "isCodeShare": false,
+          "solutionId": "26",
+          "combinables": [
+            "25"
+          ]
+        }
+      ],
+      "pointsRedemption": {
+        "redeemMiles": "53091",
+        "originalRedeemMiles": "17697"
+      }
+    }
+  ],
+  "lowestTotalFare": [],
+  "messages": [],
+  "validationRules": {
+    "isTravelDocMandatory": false,
+    "isApisForBusinessMandatory": false,
+    "isApisForEconomyMandatory": false,
+    "isInsuranceMandatory": true,
+    "showAllFlights": false,
+    "useExternalGateway": null,
+    "numberOfFlightsShown": 6,
+    "infantMinDays": 0,
+    "lstExtraProperties": null
+  },
+  "notifications": [],
+  "sessionExpiryGMT": "2024-03-06T12:38:52.1143181Z",
+  "sessionRemainingTime": 3596,
+  "repricingKey": null,
+  "banners": []
+}
+Step 6: Choose one Fare brand from the results page.
+Step 7: Select the onward and return flights 
+Step 8: On selection of Inbound flights, system redirects to Extras page
+Expected Text on Extra screen: Select extras
+Actual Text on Extra screen: Select extras
+Step 9: Choose an additional baggage of 10KG to the included items
+Step 10: Click on ‘Continue to passenger details’ hyperlink will redirect to Passenger details page
+Step 11: Enter passenger information and click on ‘Review Booking’ button
+Step 12: System navigates to ‘Review your booking details’ page
+Expected text on Review your booking screen  :Review your booking details
+Actual text on Review your booking screen  :Review your booking details
+Step 13: Validate and confirm 
+Step 14: Add validation to confirm the fare and tax components displayed in the first page is the same displayed in the Review page
+Actual Total Payment On Sceen: AED 1,441.45
+TotalPrice on extras screen : AED 1,441.45
