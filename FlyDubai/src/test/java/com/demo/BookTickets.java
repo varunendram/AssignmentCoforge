@@ -12,9 +12,7 @@ import org.openqa.selenium.devtools.v122.network.Network;
 import org.openqa.selenium.devtools.v122.network.model.RequestId;
 import org.openqa.selenium.devtools.v122.network.model.Response;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -34,16 +32,14 @@ public class BookTickets {
 		String cabinClass_class = "economy";
 		String search_xpath = "//div[@class='view-booking-btn search-book-grid d-xl-block d-lg-block d-md-block d-sm-none d-none']//input[@value='Search']";
 		String selMonthsDep_xpath = "//section[@class='lightpick lightpick--2-columns']//section[1]//header[1]//div[1]//select[1]";
-		String selMonthReturn_xpath = "//*[@id=\"dateRangeWrapper\"]/section/div[2]/div[2]/div[2]/section[1]/header/div/select[1]";
-		String dateDeparture_xpath = "//section[contains(@class,'lightpick lightpick--2-columns')]//section[1]//div[2]//div[10]";
-		String dateReturn_xpath = "//div[@class='lightpick__day is-available'][normalize-space()='13']";
+		String dateDeparture_xpath = "//*[contains(text(),15)]";
+		String dateReturn_xpath = "//div[@class='lightpick__day is-available'][normalize-space()='5']";
 		String flightResultsPage_xpath = "//label[contains(text(),'SELECT DEPARTING FLIGHT')]";
 		String expectdText = "SELECT DEPARTING FLIGHT";
-		String oneFareBrand = "//label[@id='045_fare_14320815']";
+		String oneFareBrand = "//*[@id=\"14320815\"]/div[5]";
 		String lowestFareClass = "//div[@class='Lite fare-faretype']//span[@id='span']";
-		String selectReturnFlight = "//div[@class='calRectangle-selected Caltext-selected']//p[@class='calendar-day-class ng-star-inserted'][normalize-space()='Monday']";
-		String selectReturnFare = "//label[@id='044_fare_13906745']";
-		String selectReturnClass = "//div[@class='Lite fare-faretype']//button[@type='button']";
+		String selectReturnFlight = "//div[@id='13906814']";
+		String selectReturnFare = "//*[@id=\"desktopHeader\"]/div[2]/div/div[1]/fz-desktop-availability-list/div/div/div/div/div[1]/div/div/div/div[3]/div[1]/div/fz-fare-brand-column/div/div[3]/div[2]";
 		String totalPrice_xpath = "//div[@class='totalNpr']//div[@class='currencyAmount ng-star-inserted']";
 		String extraPage = "//label[normalize-space()='Select extras']";
 		String expectedScreenText = "Select extras";
@@ -64,14 +60,14 @@ public class BookTickets {
 		String expectedPageReview = "Review your booking details";
 		String paymentCurrancy = "//div[@class='leftbox__title']";
 		String expectPaymentCurrencyPage = "Select payment currency";
-		String paymentTotalOnSceen = "//span[@class='font20 dispBlock font18']";
+		String paymentTotalOnSceen = "//span[@class=\"font20 font18 skeleton-wrapper-inline\"]";
 		String continueToPayment = "//button[@class='mat-button mat-button-base reviewPagebutton']";
 
-		WebDriverManager.chromedriver();
+		WebDriverManager.chromedriver().setup();
+		;
 //		System.setProperty("webdriver.chrome.driver",
 //				"C:/Users/Office/eclipse-workspace/PyWorkSpace/FlyDubai/src/test/resources/chromedriver.exe");
 		ChromeDriver driver = new ChromeDriver();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(30000));
 
 		System.out.println("Step 1: Click on URL will open the home page");
 		driver.get(baseURL);
@@ -113,90 +109,55 @@ public class BookTickets {
 
 		});
 
-		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(3000));
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(30000));
 
 		System.out.println("Step 2: Enter the route, date and no of passengers");
 		driver.findElement(By.id(origin_id)).sendKeys("DXB", Keys.RETURN);
 		driver.findElement(By.id(destination_id)).sendKeys("MCT", Keys.RETURN);
 		driver.findElement(By.id(departureDate_id)).click();
 		Select sel = new Select(driver.findElement(By.xpath(selMonthsDep_xpath)));
-		sel.selectByValue("3");
+		sel.selectByValue("4");
 		driver.executeScript("window.scrollBy(0,400)");
 		Thread.sleep(5000);
-		WebElement datedep = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dateDeparture_xpath)));
-
+		WebElement datedep = driver.findElement(By.xpath(dateDeparture_xpath));
 		datedep.click();
-		Select sel1 = new Select(driver.findElement(By.xpath(selMonthReturn_xpath)));
-		sel1.selectByValue("4");
 		WebElement dateReturn = driver.findElement(By.xpath(dateReturn_xpath));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(dateReturn).click(dateReturn).build().perform();
 		driver.executeScript("window.scrollBy(0,500)");
-		WebElement flyPasanger = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(flyPasanger_xpath)));
+		WebElement flyPasanger = driver.findElement(By.xpath(flyPasanger_xpath));
 		flyPasanger.click();
 		driver.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(5000);
-		try {
-			WebElement cabinClass = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.className(cabinClass_class)));
-			cabinClass.click();
-		} catch (Exception e) {
-			Assert.fail("Failed to Find Economy");
-		}
-
+		WebElement cabinClass = driver.findElement(By.className(cabinClass_class));
+		cabinClass.click();
 		System.out.println("Step 3: Click on Search button");
 		driver.findElement(By.xpath(search_xpath)).click();
-
 		System.out.println("Step 4: System redirects to flight results page");
-		WebElement actualScreen = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(flightResultsPage_xpath)));
+		WebElement actualScreen = driver.findElement(By.xpath(flightResultsPage_xpath));
 		String actualText = actualScreen.getText();
 		System.out.println("Expected text on flight results page:  " + expectdText);
 		System.out.println("Actual text on flight results page: " + actualText);
 		Assert.assertEquals(actualText, expectdText, "Failed to Navigate on flight results page");
 		System.out.println("Step 5: Click on one of the flight tab which expands the fare brand display");
-		try {
-			WebElement selectFlighDet = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(selectFlighJdate)));
-			selectFlighDet.click();
-		} catch (Exception e) {
-			Assert.fail("Failed to Find Departure Date");
-		}
+		WebElement selectFlighDet = driver.findElement(By.xpath(selectFlighJdate));
+		selectFlighDet.click();
 
 		System.out.println("Step 6: Choose one Fare brand from the results page.");
-
-		try {
-			WebElement oneFareBrandTicket = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(oneFareBrand)));
-			oneFareBrandTicket.click();
-			WebElement selectLowestFareClass = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(lowestFareClass)));
-			selectLowestFareClass.click();
-		} catch (Exception e) {
-			Assert.fail("Failed to Find select Lowest FareClass");
-		}
-
+		WebElement oneFareBrandTicket = driver.findElement(By.xpath(oneFareBrand));
+		oneFareBrandTicket.click();
+		WebElement selectLowestFareClass = driver.findElement(By.xpath(lowestFareClass));
+		selectLowestFareClass.click();
 		System.out.println("Step 7: Select the onward and return flights ");
 
-		try {
-			driver.executeScript("window.scrollBy(0,400)");
-			Thread.sleep(2000);
-			WebElement selectReturnFlighDetail = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(selectReturnFlight)));
-			selectReturnFlighDetail.click();
-			driver.executeScript("window.scrollBy(0,550)");
-			Thread.sleep(2000);
-			WebElement selectReturnFareDetail = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(selectReturnFare)));
-			selectReturnFareDetail.click();
-			driver.executeScript("window.scrollBy(0,550)");
-			Thread.sleep(2000);
-			WebElement selectReturnCl = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(selectReturnClass)));
-			selectReturnCl.click();
-		} catch (Exception e) {
-			Assert.fail("Failed to get select Return  Flight/Fare Detail or Return Class" + e.getMessage());
-		}
+		driver.executeScript("window.scrollBy(0,550)");
+		Thread.sleep(5000);
+		WebElement selectReturnFlighDetail = driver.findElement(By.xpath(selectReturnFlight));
+		selectReturnFlighDetail.click();
+		driver.executeScript("window.scrollBy(0,550)");
+		Thread.sleep(5000);
+		WebElement selectReturnFareDetail = driver.findElement(By.xpath(selectReturnFare));
+		selectReturnFareDetail.click();
 
 		System.out.println("Step 8: On selection of Inbound flights, system redirects to Extras page");
 		String actualScreenOnNavigation = driver.findElement(By.xpath(extraPage)).getText();
@@ -208,52 +169,28 @@ public class BookTickets {
 		Thread.sleep(5000);
 
 		System.out.println("Step 9: Choose an additional baggage of 10KG to the included items");
-		try {
-			WebElement add20Kg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(select20Kg)));
-			add20Kg.click();
-		} catch (Exception e) {
-			Assert.fail("Failed to Element to add 20 Kg baggate");
-		}
+		WebElement add20Kg = driver.findElement(By.xpath(select20Kg));
+		add20Kg.click();
 
 		String totalPrice = driver.findElement(By.xpath(totalPrice_xpath)).getText();
 
 		System.out.println(
-				"Step 10: Click on �Continue to passenger details� hyperlink will redirect to Passenger details page");
+				"Step 10: Click on ï¿½Continue to passenger detailsï¿½ hyperlink will redirect to Passenger details page");
 
-		try {
-			WebElement continue_xpath_1 = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(continue_xpath)));
-			continue_xpath_1.click();
-		} catch (Exception e) {
-			Assert.fail("Failed to Element for Continue to seats");
-		}
+		WebElement continue_xpath_1 = driver.findElement(By.xpath(continue_xpath));
+		continue_xpath_1.click();
 
 		driver.executeScript("window.scrollBy(0,400)");
 		Thread.sleep(5000);
-		try {
-			WebElement continue_xpath_2 = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(continueToMeal)));
-			continue_xpath_2.click();
-		} catch (Exception e) {
-			Assert.fail("Failed to Element for Continue to meals");
-		}
+		WebElement continue_xpath_2 = driver.findElement(By.xpath(continueToMeal));
+		continue_xpath_2.click();
 
-		try {
-			WebElement continue_xpath_3 = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(continueToPassangerDetails)));
-			continue_xpath_3.click();
-		} catch (Exception e) {
-			Assert.fail("Failed to Element for Continue to passenger details");
-		}
+		WebElement continue_xpath_3 = driver.findElement(By.xpath(continueToPassangerDetails));
+		continue_xpath_3.click();
 
-		System.out.println("Step 11: Enter passenger information and click on �Review Booking� button");
-		try {
-			WebElement passangeDetails = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(passangeFirstName)));
-			passangeDetails.sendKeys("Varunendra");
-		} catch (Exception e) {
-			Assert.fail("Failed to Element for First_Name");
-		}
+		System.out.println("Step 11: Enter passenger information and click on ï¿½Review Bookingï¿½ button");
+		WebElement passangeDetails = driver.findElement(By.xpath(passangeFirstName));
+		passangeDetails.sendKeys("Varunendra");
 
 		driver.findElement(By.xpath(passangeLastName)).sendKeys("Mishra");
 		driver.findElement(By.xpath(passangeEmail)).sendKeys("emailvarunendra@gmail.com");
@@ -261,30 +198,20 @@ public class BookTickets {
 		driver.findElement(By.xpath(code)).click();
 		driver.executeScript("arguments[0].scrollIntoView(true)", driver.findElement(By.xpath(countryCode)));
 
-		try {
-			WebElement countryCodes = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(countryCode)));
-			countryCodes.click();
-		} catch (Exception e) {
-			Assert.fail("Failed to Element for Country Code");
-		}
+		WebElement countryCodes = driver.findElement(By.xpath(countryCode));
+		countryCodes.click();
 
 		driver.findElement(By.xpath(passangeMobile)).sendKeys("9891945353");
 		driver.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(5000);
 
-		WebElement reviewBookingBtn = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reviewBookingButton)));
+		WebElement reviewBookingBtn = driver.findElement(By.xpath(reviewBookingButton));
 		reviewBookingBtn.click();
 
-		System.out.println("Step 12: System navigates to �Review your booking details� page");
+		System.out.println("Step 12: System navigates to ï¿½Review your booking detailsï¿½ page");
 		String actualPageReview = null;
-		try {
-			WebElement actualPageRevi = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(reviewBookingPagePath)));
-			actualPageReview = actualPageRevi.getText();
-		} catch (Exception e) {
-			Assert.fail("Failed to find element for Review your booking details");
-		}
+		WebElement actualPageRevi = driver.findElement(By.xpath(reviewBookingPagePath));
+		actualPageReview = actualPageRevi.getText();
 
 		System.out.println("Expected text on Review your booking screen  :" + expectedPageReview);
 		System.out.println("Actual text on Review your booking screen  :" + actualPageReview);
@@ -294,27 +221,17 @@ public class BookTickets {
 		System.out.println("Step 13: Validate and confirm ");
 		driver.executeScript("window.scrollBy(0,500)");
 		Thread.sleep(7000);
-		try {
-			WebElement continueToPayment_Btn = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(continueToPayment)));
-			continueToPayment_Btn.click();
-		} catch (Exception e) {
-			Assert.fail("Failed to find element for Continue to navigate on Payment page");
-		}
+		WebElement continueToPayment_Btn = driver.findElement(By.xpath(continueToPayment));
+		continueToPayment_Btn.click();
 
 		System.out.println(
 				"Step 14: Add validation to confirm the fare and tax components displayed in the first page is the "
 						+ "same displayed in the Review page");
 
 		String actualPaymentCurrencyPage = null;
-		try {
-			WebElement actualPaymentCurPage = wait
-					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(paymentCurrancy)));
+		WebElement actualPaymentCurPage = driver.findElement(By.xpath(paymentCurrancy));
 
-			actualPaymentCurrencyPage = actualPaymentCurPage.getText();
-		} catch (Exception e) {
-			Assert.fail("Failed to find element for Select payment currency on screen");
-		}
+		actualPaymentCurrencyPage = actualPaymentCurPage.getText();
 		Assert.assertEquals(actualPaymentCurrencyPage, expectPaymentCurrencyPage,
 				"Select payment currency is not displayed");
 		String actualPaymentTotalOnSceen = driver.findElement(By.xpath(paymentTotalOnSceen)).getText();
